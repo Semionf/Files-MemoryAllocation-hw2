@@ -1,0 +1,3 @@
+﻿  hw2_1.c
+C:\Users\User\source\repos\HW2\HW2\hw2_1.c(23,3): warning C4013: 'exit' undefined; assuming extern returning int
+  HW2.vcxproj -> C:\Users\User\source\repos\HW2\x64\Debug\HW2.exe
