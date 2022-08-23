@@ -1,15 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #pragma warning(disable : 4996)
 
 void printNumOfChars();
 void printNumOfAstrix();
 void printNumOfLines();
+void memoryAlloc();
 int main()
 {
-	printNumOfChars();
-	printNumOfAstrix();
-	printNumOfLines();
+	//printNumOfChars();
+	//printNumOfAstrix();
+	//printNumOfLines();
+	memoryAlloc();
 }
 
 void printNumOfChars()
@@ -74,4 +77,54 @@ void printNumOfLines()
 	}
 	fclose(f);
 	printf("The File has %d lines",count);
+}
+
+void memoryAlloc()
+{
+	FILE* f = fopen("C:\\Users\\User\\source\\repos\\HW2\\HW2_3.txt", "r");
+	char ch = 0;
+	int iCount = 0, cCount = 0;
+	int* intArr = 0;
+	char* chArr = 0;
+	int* intPtr;
+	char* chPtr;
+	int num;
+	if (!f)
+	{
+		printf("Cannot open file");
+		exit(1);
+	}
+	while (ch != EOF)
+	{
+		num = fgetc(f) - '0';
+		ch = fgetc(f);
+		if (ch != EOF)
+		{
+			if (ch == 'c')
+			{
+				cCount += num;
+			}
+			else {
+				iCount += num;
+			}
+		}
+	}
+	intArr = malloc(iCount * sizeof(int));
+	intPtr = intArr;
+	chArr = malloc(cCount * sizeof(char));
+	chPtr = chArr;
+
+	for (int i = 0; i < iCount; i++)
+	{
+		scanf("%d", intArr);
+		intArr++;
+	}
+	for (int i = 0; i < iCount; i++)
+	{
+		scanf("%c", chArr);
+		chArr++;
+	}
+	free(chArr);
+	free(intArr);
+	fclose(f);
 }
