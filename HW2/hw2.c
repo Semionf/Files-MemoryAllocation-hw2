@@ -124,7 +124,7 @@ void memoryAlloc()
 		scanf("%c", chArr);
 		chArr++;
 	}
-	free(chArr);
-	free(intArr);
+	free(chPtr);
+	free(intPtr);
 	fclose(f);
 }
