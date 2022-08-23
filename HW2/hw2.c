@@ -119,7 +119,7 @@ void memoryAlloc()
 		scanf("%d", intArr);
 		intArr++;
 	}
-	for (int i = 0; i < iCount; i++)
+	for (int i = 0; i < cCount; i++)
 	{
 		scanf("%c", chArr);
 		chArr++;
